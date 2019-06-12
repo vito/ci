@@ -1,0 +1,24 @@
+credential_managers:
+- name: vault
+  type: vault
+  config:
+    url: https://vault.concourse-ci.org:8200
+    ca_cert: ((vault_ca_cert))
+    client_cert: ((vault_client_cert))
+    client_key: ((vault_client_key))
+
+# auto-runs when a new version of the project is found
+plan:
+- set_pipeline: concourse
+- set_pipeline: release
+  name: release-5.2.x
+  vars:
+    release_major: "5"
+    release_minor: "5.2"
+    concourse_smoke_deployment_name: "concourse-smoke-5-2"
+- set_pipeline: release
+  name: release-5.3.x
+  vars:
+    release_major: "5"
+    release_minor: "5.3"
+    concourse_smoke_deployment_name: "concourse-smoke-5-3"
