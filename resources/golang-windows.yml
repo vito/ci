@@ -1,0 +1,6 @@
+type: s3
+icon: language-go
+source:
+  endpoint: storage.googleapis.com
+  bucket: golang
+  regexp: 'go(\d+\.\d+(\.\d+)?)\.windows-amd64\.msi'

@@ -1,0 +1,6 @@
+type: gcs
+icon: windows
+source:
+  bucket: concourse-artifacts
+  json_key: ((concourse_artifacts_json_key))
+  regexp: rcs/concourse-(.*)-windows-amd64.zip

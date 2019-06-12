@@ -1,0 +1,6 @@
+type: git
+icon: *git-icon
+source:
+  uri: git@github.com:concourse/docs
+  branch: gh-pages
+  private_key: ((docs_deploy_key))

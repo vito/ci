@@ -1,0 +1,2 @@
+type: registry-image
+source: {repository: dpb587/bosh-release-resource}

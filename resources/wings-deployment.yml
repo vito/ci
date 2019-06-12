@@ -1,0 +1,7 @@
+type: bosh-deployment
+icon: airplane-takeoff
+source:
+  target: ((bosh_target))
+  client: ((bosh_client.id))
+  client_secret: ((bosh_client.secret))
+  deployment: concourse-wings

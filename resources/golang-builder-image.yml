@@ -1,0 +1,5 @@
+type: registry-image
+icon: *image-icon
+source:
+  repository: concourse/golang-builder
+  password: ((docker.password))

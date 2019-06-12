@@ -1,0 +1,6 @@
+type: github-release
+icon: truck
+source:
+  owner: concourse
+  repository: concourse
+  access_token: ((concourse_github_release.access_token))

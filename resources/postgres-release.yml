@@ -1,0 +1,4 @@
+type: bosh-io-release
+icon: *release-icon
+source:
+  repository: cloudfoundry/postgres-release

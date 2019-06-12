@@ -1,0 +1,7 @@
+type: bosh-release
+icon: truck
+source:
+  uri: git@github.com:concourse/concourse-bosh-release
+  branch: master
+  private_config: *release_private_config
+  private_key: ((concourse_release_deploy_key))

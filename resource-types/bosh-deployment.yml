@@ -1,0 +1,2 @@
+type: registry-image
+source: {repository: cloudfoundry/bosh-deployment-resource}

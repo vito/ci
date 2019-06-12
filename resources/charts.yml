@@ -1,0 +1,5 @@
+type: git
+icon: *git-icon
+source:
+  uri: https://github.com/concourse/charts.git
+  branch: merged

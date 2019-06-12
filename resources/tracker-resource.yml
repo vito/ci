@@ -1,0 +1,6 @@
+type: github-release
+icon: *release-icon
+source:
+  owner: concourse
+  repository: tracker-resource
+  access_token: ((concourse_github_dummy.access_token))

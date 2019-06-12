@@ -1,0 +1,10 @@
+type: github-release
+icon: *release-icon
+source:
+  owner: cloudfoundry-incubator
+  repository: bosh-backup-and-restore
+  access_token: ((concourse_github_dummy.access_token))
+type: bosh-io-release
+icon: *release-icon
+source:
+  repository: cloudfoundry-incubator/backup-and-restore-sdk-release

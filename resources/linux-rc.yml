@@ -1,0 +1,6 @@
+type: gcs
+icon: linux
+source:
+  bucket: concourse-artifacts
+  json_key: ((concourse_artifacts_json_key))
+  regexp: rcs/concourse-(.*)-linux-amd64.tgz

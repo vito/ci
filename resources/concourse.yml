@@ -1,0 +1,54 @@
+type: git
+icon: &git-icon github-circle
+source:
+  uri: https://github.com/concourse/concourse.git
+  branch: master
+type: registry-image
+icon: *image-icon
+source:
+  repository: concourse/concourse-rc
+  password: ((docker.password))
+type: registry-image
+icon: *image-icon
+source:
+  repository: concourse/concourse
+  password: ((docker.password))
+type: bosh-release
+icon: *release-icon
+source:
+  uri: https://github.com/concourse/concourse-bosh-release
+  branch: master
+  dev_releases: true
+  private_config: &release_private_config
+    blobstore:
+      provider: gcs
+      options:
+        credentials_source: static
+        json_key: ((concourse_artifacts_json_key))
+type: bosh-release
+icon: truck
+source:
+  uri: git@github.com:concourse/concourse-bosh-release
+  branch: master
+  private_config: *release_private_config
+  private_key: ((concourse_release_deploy_key))
+type: git
+icon: *git-icon
+source:
+  uri: git@github.com:concourse/concourse-bosh-release
+  branch: master
+  private_key: ((concourse_release_deploy_key))
+type: git
+icon: *git-icon
+source:
+  uri: https://github.com/concourse/concourse-docker
+type: github-release
+icon: truck
+source:
+  owner: concourse
+  repository: concourse
+  access_token: ((concourse_github_release.access_token))
+type: bosh-io-release
+icon: *release-icon
+source:
+  repository: concourse/concourse-bosh-release

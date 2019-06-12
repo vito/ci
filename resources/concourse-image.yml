@@ -1,0 +1,5 @@
+type: registry-image
+icon: *image-icon
+source:
+  repository: concourse/concourse
+  password: ((docker.password))

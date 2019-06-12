@@ -1,0 +1,6 @@
+type: github-release
+icon: *release-icon
+source:
+  owner: cloudfoundry
+  repository: garden-runc-release
+  access_token: ((concourse_github_dummy.access_token))

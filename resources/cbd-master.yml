@@ -1,0 +1,6 @@
+type: git
+icon: *git-icon
+source:
+  uri: git@github.com:concourse/concourse-bosh-deployment.git
+  branch: master
+  private_key: ((concourse_deployment_repo_private_key))

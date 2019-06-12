@@ -1,0 +1,25 @@
+type: bosh-release
+icon: *release-icon
+source:
+  uri: https://github.com/concourse/concourse-bosh-release
+  branch: master
+  dev_releases: true
+  private_config: &release_private_config
+    blobstore:
+      provider: gcs
+      options:
+        credentials_source: static
+        json_key: ((concourse_artifacts_json_key))
+type: bosh-release
+icon: truck
+source:
+  uri: git@github.com:concourse/concourse-bosh-release
+  branch: master
+  private_config: *release_private_config
+  private_key: ((concourse_release_deploy_key))
+type: git
+icon: *git-icon
+source:
+  uri: git@github.com:concourse/concourse-bosh-release
+  branch: master
+  private_key: ((concourse_release_deploy_key))

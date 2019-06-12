@@ -1,0 +1,6 @@
+type: gcs
+icon: apple
+source:
+  bucket: concourse-artifacts
+  json_key: ((concourse_artifacts_json_key))
+  regexp: rcs/concourse-(.*)-darwin-amd64.tgz

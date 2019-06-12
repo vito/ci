@@ -1,0 +1,7 @@
+type: semver
+icon: tag
+source:
+  driver: gcs
+  bucket: concourse-artifacts
+  json_key: ((concourse_artifacts_json_key))
+  key: version

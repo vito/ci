@@ -1,0 +1,3 @@
+type: bosh-io-stemcell
+icon: *release-icon
+source:

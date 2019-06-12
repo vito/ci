@@ -1,0 +1,12 @@
+type: bosh-deployment
+icon: sync
+source:
+  target: ((bosh_target))
+  client: ((bosh_client.id))
+  client_secret: ((bosh_client.secret))
+  deployment: concourse-prod
+type: git
+icon: *git-icon
+source:
+  uri: https://github.com/concourse/prod.git
+  branch: master
