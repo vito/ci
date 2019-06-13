@@ -9,6 +9,8 @@ credential_managers:
 
 # auto-runs when a new version of the project is found
 plan:
+# set_pipeline is a new type of step for configuring pipelines. it could also
+# be used in pipeline jobs, and could even have hierarchial semantics.
 - set_pipeline: concourse
 - set_pipeline: release
   name: release-5.2.x
