@@ -1,5 +1,0 @@
-# no credential management configured here; we don't want PRs to be able to
-# read them
-
-plan:
-- set_pipeline: prs
