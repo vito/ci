@@ -1,0 +1,11 @@
+---
+platform: linux
+
+inputs:
+- name: concourse-branches
+
+outputs:
+- name: environment
+
+run:
+  path: tasks/scripts/generate-environment

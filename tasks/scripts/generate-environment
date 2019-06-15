@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat concourse-branch/name | sed 's/[^a-z-]/-/g' > environment/name

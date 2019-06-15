@@ -7,20 +7,31 @@ credential_managers:
     client_cert: ((vault_client_cert))
     client_key: ((vault_client_key))
 
-# auto-runs when a new version of the project is found
+# auto-runs when a new version of the project is configured
 plan:
 # set_pipeline is a new type of step for configuring pipelines. it could also
 # be used in pipeline jobs, and could even have hierarchial semantics.
 - set_pipeline: concourse
-- set_pipeline: release
-  name: release-5.2.x
-  vars:
-    release_major: "5"
-    release_minor: "5.2"
-    concourse_smoke_deployment_name: "concourse-smoke-5-2"
-- set_pipeline: release
-  name: release-5.3.x
-  vars:
-    release_major: "5"
-    release_minor: "5.3"
-    concourse_smoke_deployment_name: "concourse-smoke-5-3"
+
+# runs the step once for each version, 'get'ing it for each step
+- across: concourse-branch
+  trigger: true
+  do:
+  - task: generate-environment
+  - set_pipeline: branch
+
+    # tie the pipeline to the version; pipeline will be auto-archived when the
+    # associated version disappears, and can be referenced by the version via
+    # some syntax like branch{name:concourse}
+    instance_of: concourse-branch
+
+    var_files:
+      branch_name: concourse-branch/name
+      environment: environment/name
+
+# BUILD MATRIX!
+- across: concourse-branch
+  step:
+    across: ruby
+    step:
+      task: unit

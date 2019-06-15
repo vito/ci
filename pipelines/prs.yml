@@ -8,7 +8,6 @@ resource_types:
   type: registry-image
   source: {repository: teliaoss/github-pr-resource}
 
-
 resources:
 - name: concourse-master
   type: git
