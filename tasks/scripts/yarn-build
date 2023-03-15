@@ -4,7 +4,7 @@
 set -e -u
 
 # for better yarn output
-stty columns 80
+stty columns 80 || true
 
 pushd concourse
   yarn install
